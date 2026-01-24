@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tumwine Cathbert | eco4x</title>
+    <title>Tumwine Cathbert | Cybersecurity Portfolio</title>
     <style>
         :root {
             --bg: #050505;
@@ -11,83 +11,122 @@
             --accent: #00ff41;
             --text: #e6edf3;
             --border: #30363d;
+            --secondary: #8b949e;
         }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
+        * { box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         
-        /* Header & Bio */
-        .header { text-align: center; margin-bottom: 50px; }
-        .profile-pic { width: 140px; height: 140px; border-radius: 50%; border: 2px solid var(--accent); margin-bottom: 20px; object-fit: cover; }
-        h1 { font-size: 2.5rem; margin: 0; color: white; }
-        .handle { color: var(--accent); font-family: monospace; font-size: 1.2rem; margin-bottom: 15px; display: block; }
-        .bio-box { max-width: 700px; margin: 0 auto; font-size: 1.05rem; color: #8b949e; line-height: 1.7; }
+        /* Header */
+        .header { text-align: center; margin-bottom: 60px; }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 20px; object-fit: cover; background: #161b22; }
+        h1 { font-size: 2.8rem; margin: 0; color: white; letter-spacing: -1px; }
+        .handle { color: var(--accent); font-family: monospace; font-size: 1.2rem; margin-top: 5px; display: block; }
+        .bio-box { max-width: 750px; margin: 25px auto; font-size: 1.1rem; color: var(--secondary); }
         .bio-box strong { color: var(--text); }
 
-        /* Sections */
-        h2 { border-left: 4px solid var(--accent); padding-left: 15px; margin-top: 60px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 2px; color: white; }
+        /* Section Styling */
+        h2 { border-left: 4px solid var(--accent); padding-left: 15px; margin-top: 80px; text-transform: uppercase; font-size: 1rem; letter-spacing: 2px; color: white; }
         
         /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: 0.3s ease; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: 0.3s ease; height: 100%; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 65, 0.1); }
         
-        /* Images */
-        .cert-img { width: 100%; height: 180px; background: #000; border-radius: 6px; object-fit: contain; border: 1px solid #1f242c; margin-bottom: 15px; }
-        .logo-img { width: 120px; height: auto; margin-bottom: 20px; border-radius: 8px; }
-        .cert-title { color: var(--accent); font-weight: bold; font-size: 0.95rem; display: block; margin-bottom: 5px; }
-        .cert-vendor { font-size: 0.8rem; color: #8b949e; }
+        /* Media Fallbacks */
+        .img-container { width: 100%; height: 180px; background: #161b22; border-radius: 8px; margin-bottom: 20px; overflow: hidden; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; position: relative; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .img-container::after { content: '📁'; font-size: 2rem; position: absolute; z-index: 0; opacity: 0.2; }
+        .img-container img { position: relative; z-index: 1; }
 
-        /* Skills List */
-        .skills-tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .skill-tag { background: #161b22; border: 1px solid var(--border); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; color: var(--accent); }
+        .card-title { color: var(--accent); font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; display: block; }
+        .card-desc { font-size: 0.95rem; color: var(--secondary); margin-bottom: 20px; flex-grow: 1; }
 
-        /* About Section */
-        .about-card { background: rgba(0, 255, 65, 0.05); border: 1px solid var(--accent); border-radius: 12px; padding: 30px; margin-top: 25px; text-align: center; }
-        .about-list { text-align: left; color: #8b949e; list-style-type: '🚀 '; padding-left: 20px; display: inline-block; }
+        /* Tags */
+        .tag-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: rgba(0, 255, 65, 0.1); border: 1px solid rgba(0, 255, 65, 0.2); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; color: var(--accent); font-family: monospace; }
 
-        footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 80px; opacity: 0.5; font-size: 0.85rem; }
-        .footer-links a { color: var(--accent); text-decoration: none; margin: 0 10px; }
-        .project-link { text-decoration: none; color: inherit; display: block; }
+        footer { text-align: center; padding: 80px 0 40px; border-top: 1px solid var(--border); margin-top: 100px; color: var(--secondary); font-size: 0.9rem; }
+        .footer-links { margin-top: 20px; }
+        .footer-links a { color: var(--accent); text-decoration: none; margin: 0 15px; font-weight: 500; }
+        .footer-links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header class="header">
-        <img src="profile.png" alt="Profile Picture" class="profile-pic">
+        <img src="profile.png" alt="Tumwine Cathbert" class="profile-pic">
         <h1>Tumwine Cathbert</h1>
         <span class="handle">>_ eco4x</span>
         
         <div class="bio-box">
-            I am a high-growth <strong>Information Technology student</strong> and <strong>Cybersecurity enthusiast</strong> with a foundation in ISO 27001 standards and SOC operations. Beyond the classroom, I am a builder—developing Python automation tools and exploring the security frontiers of Web3.
-        </div>
-
-        <div class="skills-tag-container" style="justify-content: center; margin-top: 20px;">
-            <span class="skill-tag">Cybersecurity</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">ISO 27001</span>
-            <span class="skill-tag">IT Support</span>
-            <span class="skill-tag">Web3</span>
+            I am a high-growth <strong>Information Technology student</strong> and <strong>Cybersecurity enthusiast</strong> with a foundation in ISO 27001 standards and SOC operations. I build Python automation tools and explore the security frontiers of Web3.
         </div>
     </header>
 
-    <h2>Recent Projects & Lab Work</h2>
+    <h2>Projects & Labs</h2>
+    <div class="grid">
+        <a href="https://github.com/eco4x/ECOSHIELD-AGENT" class="card" target="_blank">
+            <div class="img-container">
+                <img src="ECOSHIELD.jpg" alt="ECOSHIELD">
+            </div>
+            <span class="card-title">ECOSHIELD: SOAR Engine</span>
+            <p class="card-desc">A Python-based suite for incident response, real-time file monitoring, and automated threat mitigation.</p>
+            <div class="tag-wrap">
+                <span class="tag">Python</span>
+                <span class="tag">Automation</span>
+                <span class="tag">SOC</span>
+            </div>
+        </a>
+
+        <a href="#" class="card">
+            <div class="img-container">
+                <img src="iso-lab.jpg" alt="ISO Lab">
+            </div>
+            <span class="card-title">ISO 27001 Compliance Lab</span>
+            <p class="card-desc">Simulated risk assessment and Internal Audit framework developed during my Information Security studies.</p>
+            <div class="tag-wrap">
+                <span class="tag">Compliance</span>
+                <span class="tag">Audit</span>
+                <span class="tag">GRC</span>
+            </div>
+        </a>
+
+        <a href="#" class="card">
+            <div class="img-container">
+                <img src="web3.jpg" alt="Web3 Security">
+            </div>
+            <span class="card-title">Web3 Security Research</span>
+            <p class="card-desc">Analyzing smart contract vulnerabilities and decentralized identity (DID) security protocols.</p>
+            <div class="tag-wrap">
+                <span class="tag">Web3</span>
+                <span class="tag">Blockchain</span>
+                <span class="tag">Security</span>
+            </div>
+        </a>
+    </div>
+
+    <h2>Certifications</h2>
     <div class="grid">
         <div class="card">
-            <a href="https://github.com/eco4x/ECOSHIELD-AGENT" target="_blank" class="project-link">
-                <img src="ECOSHIELD.jpg" alt="ECOSHIELD" class="cert-img">
-                <span class="cert-title">ECOSHIELD: Automated SOAR Engine</span>
-                <span class="cert-vendor">Python-based suite for incident response and real-time protection.</span>
-                <div class="skills-tag-container">
-                    <span class="skill-tag">SOAR</span>
-                    <span class="skill-tag">Python</span>
-                </div>
-            </a>
+            <span class="card-title">IT Support Professional</span>
+            <p class="card-desc">Foundational hardware, networking, and operating system troubleshooting.</p>
+            <div class="tag-wrap">
+                <span class="tag">Google/Coursera</span>
+            </div>
         </div>
+        <div class="card">
+            <span class="card-title">Cybersecurity Specialization</span>
+            <p class="card-desc">Network security, defensive strategies, and incident response basics.</p>
+            <div class="tag-wrap">
+                <span class="tag">In Progress</span>
+            </div>
         </div>
+    </div>
 
     <footer>
-        <p>TUMWINE CATHBERT // 2026 // ESTABLISHED IN UGANDA</p>
+        <p>TUMWINE CATHBERT // 2026 // KAMPALA, UGANDA</p>
         <div class="footer-links">
             <a href="https://linkedin.com/in/tumwinecathbert">LinkedIn</a>
             <a href="https://github.com/eco4x">GitHub</a>
