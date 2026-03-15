@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cathbert Tumwine | Cybersecurity & Dev</title>
+  <title>Tumwine Cathbert | Cybersecurity & Dev</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
   <style>
     :root[data-theme="dark"] {
@@ -114,7 +114,6 @@
 
     section { position: relative; z-index: 1; }
 
-    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -286,7 +285,6 @@
     }
     .section-title span { color: var(--accent); }
 
-    /* PROJECTS */
     #projects { background: var(--bg2); }
 
     .projects-grid {
@@ -354,7 +352,19 @@
       line-height: 1;
     }
 
-    /* CERTS */
+    .project-link {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent2);
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+
     #certifications { background: var(--bg); }
 
     .certs-grid {
@@ -384,7 +394,6 @@
     .cert-issuer { font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; color: var(--accent2); letter-spacing: 1.5px; }
     .cert-desc { color: var(--text2); font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5; }
 
-    /* CONTACT */
     #contact { background: var(--bg2); }
 
     .contact-wrap {
@@ -562,6 +571,23 @@
 
         <div class="project-card reveal">
           <span class="project-number">02</span>
+          <span class="project-tag blue">E-COMMERCE</span>
+          <h3 class="project-name">NOIRE — Luxury Store</h3>
+          <p class="project-desc">
+            A dark luxury fashion e-commerce site with product filtering,
+            shopping cart, product detail modal, light/dark mode, and newsletter signup.
+          </p>
+          <div class="project-stack">
+            <span class="stack-pill">HTML</span>
+            <span class="stack-pill">CSS</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Netlify</span>
+          </div>
+          <a href="https://ecomm-store-sample.netlify.app/" target="_blank" class="project-link">LIVE DEMO →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <span class="project-number">03</span>
           <span class="project-tag blue">WEB</span>
           <h3 class="project-name">Portfolio Site</h3>
           <p class="project-desc">
@@ -577,7 +603,7 @@
         </div>
 
         <div class="project-card reveal">
-          <span class="project-number">03</span>
+          <span class="project-number">04</span>
           <span class="project-tag orange">COMING SOON</span>
           <h3 class="project-name">CTF Writeups</h3>
           <p class="project-desc">
@@ -693,7 +719,7 @@
   </section>
 
   <footer>
-    <div class="footer-left">&copy; 2026 <span>Cathbert Tumwine</span> — eco4x</div>
+    <div class="footer-left">&copy; 2026 <span>Tumwine Cathbert</span> — eco4x</div>
     <div class="footer-links">
       <a href="https://github.com/eco4x" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/tumwinecathbert" target="_blank">LinkedIn</a>
