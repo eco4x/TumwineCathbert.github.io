@@ -3,188 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tumwine Cathbert | Cybersecurity & Dev</title>
+  <title>Tumwine Cathbert | Cybersecurity</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet"/>
+
   <style>
-    /* (UNCHANGED CSS — same as your original, kept intact) */
-    /* For brevity here, your entire CSS block stays EXACTLY the same */
+    body {
+      background: #060a0f;
+      color: #e8f4f8;
+      font-family: 'Syne', sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: #0d1520;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    a { color: #00ff88; text-decoration: none; }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+
+    .hero-desc {
+      max-width: 500px;
+      color: #8ba7bf;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      border: 1px solid rgba(0,255,136,0.2);
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: #0d1520;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      color: #00ff88;
+    }
   </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="nav-logo">eco4x<span>.dev</span></div>
+  <div>eco4x</div>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">[ LIGHT ]</button>
 </nav>
 
 <section id="hero">
-  <div class="hero-left">
-    <p class="hero-tag">// CYBERSECURITY · DEV · BUILDER</p>
+  <h1>Tumwine Cathbert</h1>
 
-    <h1 class="hero-name">
-      <span class="first">Tumwine</span><br/>
-      <span class="last">Cathbert</span>
-    </h1>
+  <p id="typed"></p>
 
-    <div class="hero-typed-line">
-      <span id="typed-text"></span><span class="cursor"></span>
-    </div>
-
-    <p class="hero-desc">
-      Google Cybersecurity Certificate holder and IT student based in Uganda.
-      I build and experiment with tools and projects as part of my learning journey,
-      and I believe the best way to learn security is through consistent practice.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
-      <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>
-    </div>
-  </div>
+  <p class="hero-desc">
+    Google Cybersecurity Certificate holder and IT student based in Uganda.
+    Focused on learning cybersecurity through hands-on practice, problem-solving,
+    and continuous exploration of real-world concepts.
+  </p>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-wrap">
-    <p class="section-label">// 01 — PROJECTS</p>
-    <h2 class="section-title">What I've <span>Built</span></h2>
+  <h2>Projects</h2>
 
-    <div class="projects-grid">
+  <div class="projects-grid">
 
-      <div class="project-card featured">
-        <span class="project-number">01</span>
-        <span class="project-tag">PROJECT</span>
-        <h3 class="project-name">ECOSHIELD-AGENT</h3>
-        <p class="project-desc">
-          A Python-based security automation project exploring SOAR concepts,
-          including threat monitoring, logging, and response workflows.
-        </p>
-      </div>
-
-      <div class="project-card">
-        <span class="project-number">02</span>
-        <span class="project-tag">WEB</span>
-        <h3 class="project-name">E-Commerce Demo</h3>
-        <p class="project-desc">
-          A front-end e-commerce interface built to practice UI design,
-          product filtering, and user interaction.
-        </p>
-      </div>
-
+    <div class="card">
+      <span class="tag">SECURITY</span>
+      <h3>Security Automation Project</h3>
+      <p>
+        A project exploring security automation concepts, including monitoring,
+        logging, and response workflows as part of my learning process.
+      </p>
     </div>
+
+    <div class="card">
+      <span class="tag">WEB</span>
+      <h3>Web Development Projects</h3>
+      <p>
+        A collection of web-based projects built to improve frontend skills,
+        user interaction, and design understanding.
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-wrap">
-    <p class="section-label">// 02 — EXPERIENCE</p>
-    <h2 class="section-title">Where I've <span>Worked & Learned</span></h2>
+  <h2>Experience</h2>
 
-    <div class="projects-grid">
+  <div class="card">
+    <span class="tag">INTERNSHIP</span>
+    <h3>Cybersecurity Intern — Allsafe Africa</h3>
+    <p>
+      Participating in a cybersecurity internship focused on hands-on learning,
+      Capture The Flag (CTF) challenges, and foundational security concepts.
 
-      <div class="project-card">
-        <span class="project-number">01</span>
-        <span class="project-tag">INTERNSHIP</span>
-
-        <h3 class="project-name">Cybersecurity Intern — Allsafe Africa</h3>
-
-        <p class="project-desc">
-          Currently participating in a cybersecurity internship focused on
-          hands-on learning, Capture The Flag (CTF) challenges, and foundational
-          security concepts.
-
-          Working with Linux systems, networking basics, and problem-solving
-          exercises to understand how systems work and how vulnerabilities can be approached.
-        </p>
-
-        <div class="project-stack">
-          <span class="stack-pill">CTF</span>
-          <span class="stack-pill">Linux</span>
-          <span class="stack-pill">Networking</span>
-          <span class="stack-pill">Cybersecurity</span>
-        </div>
-
-      </div>
-
-    </div>
+      Gaining exposure to Linux systems, networking basics, and structured
+      problem-solving to better understand how systems operate and how
+      vulnerabilities can be approached.
+    </p>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section id="certifications">
-  <div class="section-wrap">
-    <p class="section-label">// 03 — CERTIFICATIONS</p>
-    <h2 class="section-title">Proof of <span>Work</span></h2>
-    <!-- keep your certs as they were -->
+  <h2>Certifications</h2>
+
+  <div class="card">
+    <h3>Google Cybersecurity Certificate</h3>
   </div>
+
+  <div class="card">
+    <h3>Cisco Introduction to Cybersecurity</h3>
+  </div>
+
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <div class="section-wrap">
-    <p class="section-label">// 04 — CONTACT</p>
-    <h2 class="section-title">Let's <span>Connect</span></h2>
-    <!-- keep your contact section -->
-  </div>
-</section>
+  <h2>Contact</h2>
 
-<footer>
-  <p>© 2026 Tumwine Cathbert — eco4x</p>
-</footer>
+  <p>Email: cathbertelisha80@gmail.com</p>
+  <p>GitHub: github.com/eco4x</p>
+  <p>LinkedIn: linkedin.com/in/tumwinecathbert</p>
+
+</section>
 
 <script>
-function toggleTheme() {
-  const html = document.documentElement;
-  const btn = document.getElementById('theme-btn');
-  if (html.getAttribute('data-theme') === 'dark') {
-    html.setAttribute('data-theme', 'light');
-    btn.textContent = '[ DARK ]';
-  } else {
-    html.setAttribute('data-theme', 'dark');
-    btn.textContent = '[ LIGHT ]';
-  }
-}
-
 const phrases = [
-  'Cybersecurity Learner',
+  'Cybersecurity & Web Security Learner',
   'CTF Intern @ Allsafe Africa',
-  'Ethical Hacking Enthusiast',
-  'Builder of ECOSHIELD-AGENT'
+  'Hands-on Security Learner',
+  'Cybersecurity Awareness Advocate'
 ];
 
-let i = 0, j = 0, del = false;
-const el = document.getElementById('typed-text');
+let i = 0;
+const el = document.getElementById('typed');
 
-function type() {
-  const text = phrases[i];
-
-  if (!del) {
-    el.textContent = text.slice(0, j++);
-    if (j > text.length) {
-      del = true;
-      setTimeout(type, 1500);
-      return;
-    }
-  } else {
-    el.textContent = text.slice(0, j--);
-    if (j === 0) {
-      del = false;
-      i = (i + 1) % phrases.length;
-    }
-  }
-
-  setTimeout(type, del ? 40 : 80);
+function rotate() {
+  el.textContent = phrases[i];
+  i = (i + 1) % phrases.length;
 }
 
-type();
+setInterval(rotate, 2000);
+rotate();
 </script>
 
 </body>
