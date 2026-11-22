@@ -71,6 +71,30 @@
     .journey-principle p{color:var(--muted);margin:0;max-width:780px}
     @media(max-width:760px){.journey-entry,.journey-entry:nth-child(even){grid-template-columns:1fr;gap:18px;padding:16px}.journey-entry:nth-child(even) .journey-visual{order:0}.journey-visual,.journey-visual img{min-height:180px}}
 
+
+    .journey-gallery{margin:34px 0 30px;padding:26px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(19,35,56,.82),rgba(8,17,31,.78))}
+    .gallery-top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+    .gallery-top h3{margin:4px 0 6px;font-size:1.35rem;letter-spacing:-.035em}
+    .gallery-top p{margin:0;color:var(--muted);max-width:620px;font-size:.92rem}
+    .gallery-controls{display:flex;gap:8px;flex-shrink:0}
+    .gallery-controls button{width:40px;height:40px;border:1px solid var(--line);border-radius:9px;background:var(--panel2);color:var(--text);font-size:1.15rem;cursor:pointer}
+    .gallery-controls button:hover{border-color:var(--accent);color:var(--accent)}
+    .journey-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px, min(42%, 390px));gap:14px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:rgba(85,224,192,.45) transparent;padding:2px 2px 14px}
+    .journey-slide{scroll-snap-align:start;min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(8,17,31,.82)}
+    .journey-slide img{display:block;width:100%;height:245px;object-fit:cover;background:#0c1828}
+    .journey-slide figcaption{padding:14px 15px 16px}
+    .journey-slide strong{display:block;font-size:.92rem;margin-bottom:5px}
+    .journey-slide span{display:block;color:var(--muted);font-size:.8rem;line-height:1.55}
+    .journey-slide .evidence-label{display:inline-block;color:var(--accent);font: .66rem "DM Mono",monospace;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px}
+    .community-note{color:var(--muted);font-size:.78rem;margin:8px 0 0}
+    .ctf-highlight{margin-top:18px;padding:20px;border:1px solid rgba(85,224,192,.22);border-radius:12px;background:rgba(85,224,192,.055)}
+    .ctf-highlight strong{color:var(--accent)}
+    .thanks-panel{margin-top:18px;padding:22px;border:1px solid var(--line);border-radius:12px;background:rgba(16,29,45,.58)}
+    .thanks-panel h3{margin:0 0 8px;font-size:1.05rem}
+    .thanks-panel p{margin:0;color:var(--muted);font-size:.9rem}
+    @media(max-width:760px){.journey-gallery{padding:18px}.gallery-top{align-items:start;flex-direction:column}.journey-carousel{grid-auto-columns:minmax(250px,82%)}.journey-slide img{height:220px}}
+    @media(prefers-reduced-motion:reduce){.journey-carousel{scroll-behavior:auto}}
+  
   </style>
 </head>
 <body>
@@ -126,6 +150,24 @@
         <div class="journey-copy"><span class="tag">A CHANGE IN MINDSET</span><h3>From collecting certificates to applying knowledge.</h3><p>As I continued learning, I began to understand that certificates can recognise effort and structured study, but they are not the same as practical ability. What matters is whether I can explain what I learned, apply it, test it, recognise mistakes and improve.</p><p>That is why I am putting more emphasis on hands-on labs, documented configurations, project work and honest reflections — not just the names of courses I have completed.</p><p class="lesson"><strong>My principle:</strong> Learn it. Practise it. Understand it. Document what worked, what failed and what you would do differently.</p><div class="journey-caption">Illustrative image — used to represent ongoing study and practical learning.</div></div>
       </article>
     </div>
+    <section class="journey-gallery" id="community-gallery" aria-label="Practical learning and community highlights">
+      <div class="gallery-top">
+        <div><span class="tag">FIELD NOTES · PEOPLE · PRACTICE</span><h3>Learning alongside others.</h3><p>Some of the most useful learning happens when ideas are shared, software is explored together and a team works through a challenge. These moments are part of my development, too.</p></div>
+        <div class="gallery-controls" aria-label="Gallery controls">
+          <button type="button" id="journey-prev" aria-label="Previous photographs">‹</button>
+          <button type="button" id="journey-next" aria-label="Next photographs">›</button>
+        </div>
+      </div>
+      <div class="journey-carousel" id="journey-carousel" tabindex="0" aria-label="Photographs and evidence from my learning journey">
+        <figure class="journey-slide"><img src="journey1/IMG-20260507-WA0017.jpg" alt="AllSafeAfrica SCOPD programme spotlight featuring Tumwine Cathbert" loading="lazy"><figcaption><span class="evidence-label">ALLSAFEAFRICA · MAY 2026</span><strong>Recognised during the internship.</strong><span>AllSafeAfrica featured me as an outstanding intern in its Cybersecurity and System Administration track, highlighting curiosity, engagement and an interest in understanding the reasons behind security practices.</span></figcaption></figure>
+        <figure class="journey-slide"><img src="journey1/IMG-20260807-WA0023.jpg" alt="Tumwine guiding another intern through a software interface at a workstation" loading="lazy"><figcaption><span class="evidence-label">SCOPD · PEER LEARNING</span><strong>Learning by sharing what I know.</strong><span>A practical moment of walking another intern through the software interface. Explaining a workflow to someone else also tests how clearly I understand it myself.</span></figcaption></figure>
+        <figure class="journey-slide"><img src="journey1/Screenshot_20261122_074900_LinkedIn.jpg" alt="Seclaf CTF team scoreboard showing the team's tenth-place result" loading="lazy"><figcaption><span class="evidence-label">SECLAF CTF · TEAMWORK</span><strong>Contributing as part of a CTF team.</strong><span>The team scoreboard records a tenth-place finish, 27 captured challenges and my eco4x contribution of 250 points. A reminder that collaboration matters alongside individual problem-solving.</span></figcaption></figure>
+        <figure class="journey-slide"><img src="journey1/Screenshot_20261122_074819_LinkedIn.jpg" alt="HackHazards 2026 project submitted credential issued to Tumwine Cathbert" loading="lazy"><figcaption><span class="evidence-label">HACKHAZARDS ’26</span><strong>Taking a project through submission.</strong><span>A verified submission badge recognising participation in the HackHazards ’26 project hackathon and the completion of a project submission.</span></figcaption></figure>
+      </div>
+      <p class="community-note">Photographs are included as evidence of learning and participation. Identifiable colleagues are not featured in this gallery without their permission.</p>
+      <div class="ctf-highlight"><strong>CTF team result:</strong> The LinkedIn evidence records a top-10 finish (#10) out of more than 1,500 participants in the Seclaf CTF. My contribution on the team scoreboard was 250 points. This is a team achievement, not an individual ranking.</div>
+      <div class="thanks-panel"><h3>People who have supported the journey</h3><p>My appreciation to Mubito and the AllSafeAfrica team for the internship opportunity and practical learning environment. I also acknowledge Tim Rice and DeAndre for their part in the HackRange mentorship experience. I’ll add photographs or further details about people only with their consent.</p></div>
+    </section>
     <div class="journey-principle"><span class="tag">A PERSONAL REMINDER</span><blockquote>“Nothing stops determination unless you decide to stop.”</blockquote><p>This journal will grow as I do. I will continue sharing milestones, practical progress, useful guide notes, resources that helped me and lessons from navigating the challenges along the way. If something I learn makes the path clearer for someone else, I want to share it.</p></div>
   </div></section>
 
@@ -212,6 +254,7 @@
     <div class="cards">
       <article class="panel"><span class="tag">COMPLETED</span><h3>Google Cybersecurity Professional Certificate</h3><p>Coursera · 2026</p></article>
       <article class="panel"><span class="tag">COMPLETED</span><h3>Cisco Introduction to Cybersecurity</h3><p> Cisco Networking Academy</p></article>
+      <article class="panel"><span class="tag">COMPLETED</span><h3>ICDL Certificate</h3><p>International Certification of Digital Literacy · 2026</p></article>
     </div>
   </div></section>
 
@@ -223,5 +266,23 @@
 </main>
 <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Tumwine Cathbert</span><span>Built with curiosity and documented practice.</span></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  const track = document.getElementById('journey-carousel');
+  const prev = document.getElementById('journey-prev');
+  const next = document.getElementById('journey-next');
+  if (!track || !prev || !next) return;
+  const move = direction => {
+    const slide = track.querySelector('.journey-slide');
+    if (!slide) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 14;
+    track.scrollBy({left: direction * (slide.getBoundingClientRect().width + gap), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+  };
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+})();
+</script>
+
 </body>
 </html>
