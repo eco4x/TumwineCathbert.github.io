@@ -211,8 +211,8 @@
       <article class="project lab-project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A Microsoft Entra ID homelab built around a fictional seven-person company. The exercise covered user lifecycle setup, department attributes, security-group design and membership, enterprise application configuration, and individual user assignment. It also records a tenant-plan limitation affecting group-based application assignment. This is a documented learning lab, not a production deployment.</p><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
 <p class="iam-note">Loading the original Microsoft Entra screenshots from the evidence archive…</p>
 </div>
-<p class="iam-note">These are captured Microsoft Entra admin-center screenshots from the lab. The archive is stored in this repository; the gallery extracts and displays the original images in the browser.</p>
-<a class="project-link" href="images/iam-lab/ecotechlabs-iam-real-screenshots.zip" download>Download original screenshot evidence ↗</a>
+<p class="iam-note">These are captured Microsoft Entra admin-center screenshots from the lab. They are presented inline as visual evidence; there is no download link on this page.</p>
+<p class="iam-note">Screenshots are displayed here as portfolio evidence. The original archive is not offered as a download.</p>
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script>
 (async function () {
@@ -233,23 +233,20 @@
       if (!entry) continue;
       const blob = await entry.async('blob');
       const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.className = 'iam-shot';
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      const card = document.createElement('figure');
+      card.className = 'iam-shot';
       const image = document.createElement('img');
       image.src = url;
       image.alt = title + '. ' + description;
       image.loading = 'lazy';
-      const caption = document.createElement('span');
+      const caption = document.createElement('figcaption');
       caption.textContent = title + ' — ' + description;
-      link.append(image, caption);
-      gallery.append(link);
+      card.append(image, caption);
+      gallery.append(card);
     }
     if (!gallery.children.length) throw new Error('No screenshot files were found in the archive.');
   } catch (error) {
-    gallery.textContent = 'Screenshots could not be displayed automatically. Use the download link below to access the original evidence archive.';
+    gallery.textContent = 'The screenshot gallery could not be loaded. Please try refreshing the page later.';
   }
 })();
 </script>
