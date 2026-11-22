@@ -27,6 +27,7 @@
     .about-grid,.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.panel,.project{background:linear-gradient(150deg,rgba(19,35,56,.9),rgba(16,29,45,.8));border:1px solid var(--line);border-radius:13px;padding:24px}
     .panel h3,.project h3{margin:0 0 10px;font-size:1.08rem}.panel p,.project p{color:var(--muted);margin:0}.tag{font-size:.68rem;color:var(--accent);display:inline-block;margin-bottom:12px}
     .project{display:flex;flex-direction:column;min-height:225px}.project p{flex:1}.project-link{display:inline-flex;margin-top:22px;color:var(--accent);font-weight:700;font-size:.88rem}
+    .lab-details{margin:22px 0 8px;padding:20px;border:1px solid var(--line);border-radius:10px;background:rgba(8,17,31,.42)}.lab-details h4{margin:20px 0 7px;color:var(--text);font-size:.98rem}.lab-details h4:first-child{margin-top:0}.lab-details p,.lab-details li{color:var(--muted);font-size:.88rem}.lab-details ul{padding-left:20px;margin:8px 0}.lab-details li{margin:6px 0}
     .iam-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.iam-shot{display:block;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#08111f}.iam-shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.iam-shot span{display:block;padding:10px 12px;color:var(--muted);font-size:.78rem}.iam-note{font-size:.78rem!important;color:#ffc76b!important;margin-top:12px!important}@media(max-width:600px){.iam-gallery{grid-template-columns:1fr}}
     .mentorship-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:34px}.mentorship-copy h3{font-size:1.35rem;margin:0 0 14px}.mentorship-copy p{margin:0 0 12px;max-width:680px}.mentorship-copy .credential-status{color:var(--accent);font-size:.88rem;font-weight:700;margin-top:18px}.mentorship-badge{margin:0;max-width:300px;justify-self:center;text-align:center}.mentorship-badge img{display:block;width:100%;height:auto;border-radius:50%;background:#fff}.mentorship-badge figcaption{font-size:.76rem;color:var(--muted);margin-top:12px}.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid var(--line);background:rgba(19,35,56,.65);border-radius:7px;padding:9px 13px;color:#cbd8e6;font-size:.88rem}
     .timeline{display:grid;gap:16px}.item{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}.date{font: .78rem "DM Mono",monospace;color:var(--accent)}.item h3{margin:0 0 5px}.item p{margin:0;color:var(--muted)}
@@ -208,7 +209,28 @@
     <div class="section-head"><div><div class="eyebrow">04 / Practical exploration</div><h2>Security labs.</h2></div><p class="section-lead">Hands-on exercises used to understand different areas of cybersecurity. Each lab is added here as the work is completed and documented.</p></div>
     <p class="journey-intro">These labs are a practical learning record, not a list of claimed specialisations. I use each exercise to understand the technology, configure controls, test decisions, recognise limitations and document what I learned. The topics shown here reflect completed work only; future exercises will appear when they are ready to share.</p>
     <div class="cards">
-      <article class="project lab-project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A Microsoft Entra ID homelab built around a fictional seven-person company. The exercise covered user lifecycle setup, department attributes, security-group design and membership, enterprise application configuration, and individual user assignment. It also records a tenant-plan limitation affecting group-based application assignment. This is a documented learning lab, not a production deployment.</p><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
+      <article class="project lab-project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A Microsoft Entra ID homelab built around a fictional seven-person organization. I created seven employee identities, configured department and job-title attributes, organized users into department-based security groups, and configured the EcoTechLabs Finance Portal enterprise application. The directory also contained the original administrator account established during tenant registration, making eight accounts in total. The lab documents a tenant-plan restriction on group-based application assignment and the individual-user alternative I used. This was a learning exercise, not a production deployment.</p>
+      <div class="lab-details">
+        <h4>Objectives and environment</h4>
+        <p>The goal was to practise foundational identity administration and application access control in a Microsoft Entra ID Free tenant. The fictional workforce consisted of seven EcoTechLabs employees; the eighth directory account was the original tenant administrator, not an additional employee or test administrator.</p>
+        <h4>What I configured</h4>
+        <ul>
+          <li>Created seven employee identities and populated relevant department and job-title attributes.</li>
+          <li>Created seven department-based security groups and configured group membership.</li>
+          <li>Configured an enterprise application named <strong>EcoTechLabs Finance Portal</strong>.</li>
+          <li>Assigned David Brown, Finance Officer, directly to the application with the available <strong>User</strong> role.</li>
+        </ul>
+        <h4>Challenge: group assignment was unavailable</h4>
+        <p>When configuring the Finance Portal assignment, the Entra admin center indicated that groups were unavailable for assignment under the tenant's current plan, while individual user assignment remained available. Creating security groups had worked, but using those groups for this application's assignment was restricted by the plan.</p>
+        <h4>Alternative and trade-off</h4>
+        <p>I adapted by assigning David Brown individually with the User role. This allowed the application-assignment exercise to continue within the available tenant capabilities. Individual assignment is workable for a small lab, but it requires administrators to manage and verify each assignment separately. Group-based assignment would generally be easier to scale where the tenant's licensing and application configuration support it.</p>
+        <h4>Least-privilege reasoning</h4>
+        <p>The access decision was kept narrow: the Finance Portal assignment was made to the Finance employee, using the available User role rather than an administrative role. The exercise reinforced that access should be tied to job need and that broader access should not be granted simply for convenience. This was an initial access-control exercise, not a completed organization-wide access review.</p>
+        <h4>What I learned and what remains</h4>
+        <p>The lab showed that IAM work involves more than creating accounts: it requires understanding identities, organizing access, checking platform constraints, selecting an appropriate alternative and documenting the trade-offs. The screenshots provide evidence of the directory, groups, tenant overview and application assignment.</p>
+        <p><strong>Scope:</strong> This was a foundational Entra ID lab. It did not implement or verify production SSO, MFA enforcement, Conditional Access, automated joiner-mover-leaver workflows or a full access-review process. Those remain areas for further study and testing.</p>
+        <p><strong>Next step:</strong> Apply the same identity, role, permission and least-privilege concepts to the IAM Policy Simulator, then test its access decisions and audit output.</p>
+      </div><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
 <p class="iam-note">Loading the original Microsoft Entra screenshots from the evidence archive…</p>
 </div>
 <p class="iam-note">These are captured Microsoft Entra admin-center screenshots from the lab. They are presented inline as visual evidence; there is no download link on this page.</p>
@@ -219,7 +241,7 @@
   const gallery = document.getElementById('iam-evidence-gallery');
   const shots = [
     ['01-finance-portal-assignment.jpg','01 · Finance Portal user assignment','David Brown appears in the assigned users list for EcoTechLabs Finance Portal.'],
-    ['02-employee-directory.jpg','02 · Employee directory','The Entra directory showing the eight user accounts created for the lab.'],
+    ['02-employee-directory.jpg','02 · Employee directory','The Entra directory showing seven lab employee identities plus the original tenant administrator.'],
     ['03-security-groups.jpg','03 · Security groups','The seven department-based security groups configured in the tenant.'],
     ['04-tenant-overview.jpg','04 · Tenant overview','Tenant summary showing users, groups, enterprise applications and Entra Free.']
   ];
