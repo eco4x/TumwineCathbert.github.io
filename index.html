@@ -28,11 +28,11 @@
     .panel h3,.project h3{margin:0 0 10px;font-size:1.08rem}.panel p,.project p{color:var(--muted);margin:0}.tag{font-size:.68rem;color:var(--accent);display:inline-block;margin-bottom:12px}
     .project{display:flex;flex-direction:column;min-height:225px}.project p{flex:1}.project-link{display:inline-flex;margin-top:22px;color:var(--accent);font-weight:700;font-size:.88rem}
     .iam-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.iam-shot{display:block;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#08111f}.iam-shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.iam-shot span{display:block;padding:10px 12px;color:var(--muted);font-size:.78rem}.iam-note{font-size:.78rem!important;color:#ffc76b!important;margin-top:12px!important}@media(max-width:600px){.iam-gallery{grid-template-columns:1fr}}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid var(--line);background:rgba(19,35,56,.65);border-radius:7px;padding:9px 13px;color:#cbd8e6;font-size:.88rem}
+    .mentorship-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:34px}.mentorship-copy h3{font-size:1.35rem;margin:0 0 14px}.mentorship-copy p{margin:0 0 12px;max-width:680px}.mentorship-copy .credential-status{color:var(--accent);font-size:.88rem;font-weight:700;margin-top:18px}.mentorship-badge{margin:0;max-width:300px;justify-self:center;text-align:center}.mentorship-badge img{display:block;width:100%;height:auto;border-radius:50%;background:#fff}.mentorship-badge figcaption{font-size:.76rem;color:var(--muted);margin-top:12px}.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid var(--line);background:rgba(19,35,56,.65);border-radius:7px;padding:9px 13px;color:#cbd8e6;font-size:.88rem}
     .timeline{display:grid;gap:16px}.item{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}.date{font: .78rem "DM Mono",monospace;color:var(--accent)}.item h3{margin:0 0 5px}.item p{margin:0;color:var(--muted)}
     .contact{background:linear-gradient(135deg,rgba(85,224,192,.09),rgba(16,29,45,.5));border:1px solid rgba(85,224,192,.22);border-radius:16px;padding:30px}.contact-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px;color:var(--accent);font-weight:700}
     footer{padding:28px 0;color:var(--muted);font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    @media(max-width:760px){.navlinks{gap:13px;overflow-x:auto}.navlinks a{font-size:.78rem}.hero{grid-template-columns:1fr;padding:76px 0 62px;gap:34px;min-height:auto}.portrait{justify-self:start;max-width:230px}.about-grid,.cards{grid-template-columns:1fr}.section-head{display:block}.item{grid-template-columns:1fr;gap:5px}section{padding:60px 0}}
+    @media(max-width:760px){.mentorship-panel{grid-template-columns:1fr;padding:24px}.mentorship-badge{max-width:240px}.navlinks{gap:13px;overflow-x:auto}.navlinks a{font-size:.78rem}.hero{grid-template-columns:1fr;padding:76px 0 62px;gap:34px;min-height:auto}.portrait{justify-self:start;max-width:230px}.about-grid,.cards{grid-template-columns:1fr}.section-head{display:block}.item{grid-template-columns:1fr;gap:5px}section{padding:60px 0}}
     @media(max-width:470px){.wrap{width:min(var(--max),calc(100% - 28px))}nav{align-items:flex-start;flex-direction:column;padding:14px 0}.navlinks{width:100%;padding-bottom:5px}.hero{padding-top:55px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
@@ -42,7 +42,7 @@
   <nav class="wrap" aria-label="Main navigation">
     <a class="brand" href="#home">eco<span>4x</span></a>
     <ul class="navlinks">
-      <li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#development">Mentorship</a></li><li><a href="#certifications">Credentials</a></li><li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -52,7 +52,7 @@
       <div class="eyebrow">Cybersecurity • Security Operations • Continuous Learning</div>
       <h1>Tumwine<br>Cathbert.</h1>
       <p class="role">Information Technology Student | Cybersecurity &amp; Security Operations</p>
-      <p class="intro">I’m an IT student building practical skills in cybersecurity through hands-on labs, security projects and continuous learning. My interests include security operations, identity and access management, security awareness and the foundations of AI security.</p>
+      <p class="intro">I’m an Information Technology student developing practical cybersecurity capability through structured learning, hands-on labs and security projects. My current focus areas are security operations, identity and access management, enterprise IT, security awareness and the foundations of AI security.</p>
       <div class="actions">
         <a class="btn primary" href="#projects">Explore my work</a>
         <a class="btn" href="https://www.linkedin.com/in/tumwinecathbert/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
@@ -73,11 +73,11 @@
   </div></section>
 
   <section id="projects"><div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2>Projects &amp; labs.</h2></div><p class="section-lead">A growing collection of practical projects. Each project will include its purpose, implementation notes, limitations and evidence as it develops.</p></div>
+    <div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2>Projects &amp; labs.</h2></div><p class="section-lead">Selected work from my practical learning journey. Each case study separates the problem, configuration, decisions, evidence and lessons learned.</p></div>
     <div class="cards">
       <article class="project"><span class="tag">SECURITY AUTOMATION</span><h3>EcoShield Agent</h3><p>A security automation project exploring monitoring, security workflows and response concepts. Built as part of the EcoTechLabs project portfolio.</p><a class="project-link" href="https://github.com/eco4x/ECOSHIELD-AGENT" target="_blank" rel="noopener noreferrer">View repository ↗</a></article>
       <article class="project"><span class="tag">IDENTITY &amp; ACCESS MANAGEMENT</span><h3>IAM Policy Simulator</h3><p>An educational RBAC simulator for experimenting with users, roles, permissions, access decisions and basic audit events. A work in progress, not a production IAM platform.</p><a class="project-link" href="https://github.com/eco4x/iam-policy-simulator" target="_blank" rel="noopener noreferrer">View repository ↗</a></article>
-      <article class="project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A hands-on Entra ID homelab using a fictional seven-person company. Configured employee identities, department attributes, security groups and membership, then created an enterprise application and assigned a Finance user. The lab also documents the Entra ID Free limitation that prevented group-based application assignment in this tenant. This is a learning environment, not a production deployment.</p><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
+      <article class="project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A Microsoft Entra ID homelab built around a fictional seven-person company. The exercise covered user lifecycle setup, department attributes, security-group design and membership, enterprise application configuration, and individual user assignment. It also records a tenant-plan limitation affecting group-based application assignment. This is a documented learning lab, not a production deployment.</p><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
 <p class="iam-note">Loading the original Microsoft Entra screenshots from the evidence archive…</p>
 </div>
 <p class="iam-note">These are captured Microsoft Entra admin-center screenshots from the lab. The archive is stored in this repository; the gallery extracts and displays the original images in the browser.</p>
@@ -122,8 +122,7 @@
   }
 })();
 </script>
-<p class="iam-note">These are original explanatory visuals, not captured Microsoft Entra screenshots. Genuine portal screenshots will be added separately as implementation evidence.</p>
-<span class="project-link">Visual walkthrough · More lab evidence to follow</span></article>
+<span class="project-link">Practical configuration · Evidence gallery · Lessons learned</span></article>
       <article class="project"><span class="tag">PERSONAL PORTFOLIO</span><h3>Cybersecurity Learning Journal</h3><p>This portfolio is being developed into a record of practical labs, technical notes, project milestones and lessons learned.</p><a class="project-link" href="https://github.com/eco4x" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a></article>
       <article class="project"><span class="tag">HANDS-ON LEARNING</span><h3>Security Labs</h3><p>Practical exercises covering identity, access control, Windows and Linux administration, networking and security fundamentals. Lab write-ups will be added as they are completed.</p><span class="project-link">Documentation in progress</span></article>
     </div>
@@ -146,8 +145,13 @@
     </div>
   </div></section>
 
+  <section id="development"><div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">05 / Mentorship &amp; development</div><h2>Learning with a community.</h2></div><p class="section-lead">Structured mentorship complements my independent labs with guided discussions, practical exercises and peer learning.</p></div>
+    <article class="panel mentorship-panel"><div class="mentorship-copy"><span class="tag">HACKRANGE · SECURITY MENTORSHIP</span><h3>HackRange Mentorship Programme</h3><p>Completed the HackRange Mentorship course, with a course-completion badge recognising <strong>130 CPE hours</strong>. The programme strengthened my learning across identity and access management, OAuth, SSO, tokens, MFA, shadow IT, data loss prevention, shadow AI and incident-response tabletop preparation.</p><p class="credential-status">Course completion badge received · Formal certificate expected</p></div><figure class="mentorship-badge"><img src="images/hackrange-badge-lms-2026-e0d09625ac.png" alt="HackRange Mentorship course completion badge showing 130 CPE hours"><figcaption>HackRange Mentorship · Course Completion Badge · 130 CPE Hours</figcaption></figure></article>
+  </div></section>
+
   <section id="certifications"><div class="wrap">
-    <div class="section-head"><div><div class="eyebrow">05 / Professional development</div><h2>Certifications &amp; training.</h2></div><p class="section-lead">Selected completed learning credentials. Additional training and certificates will be added with verified titles and links.</p></div>
+    <div class="section-head"><div><div class="eyebrow">06 / Verified credentials</div><h2>Certifications &amp; training.</h2></div><p class="section-lead">Selected completed learning credentials. Additional training and certificates will be added with verified titles and links.</p></div>
     <div class="cards">
       <article class="panel"><span class="tag">COMPLETED</span><h3>Google Cybersecurity Professional Certificate</h3><p>Coursera · 2026</p></article>
       <article class="panel"><span class="tag">COMPLETED</span><h3>Cisco Introduction to Cybersecurity</h3><p> Cisco Networking Academy</p></article>
@@ -155,7 +159,7 @@
   </div></section>
 
   <section id="contact"><div class="wrap">
-    <div class="contact"><div class="eyebrow">06 / Contact</div><h2>Let’s connect.</h2><p class="section-lead">I’m open to connecting with cybersecurity professionals, mentors and teams working on practical security challenges and learning opportunities.</p>
+    <div class="contact"><div class="eyebrow">07 / Contact</div><h2>Let’s connect.</h2><p class="section-lead">I’m open to connecting with cybersecurity professionals, mentors and teams working on practical security challenges and learning opportunities.</p>
       <div class="contact-links"><a href="mailto:cathbertelisha80@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/tumwinecathbert/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/eco4x" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
     </div>
   </div></section>
