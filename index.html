@@ -77,13 +77,51 @@
     <div class="cards">
       <article class="project"><span class="tag">SECURITY AUTOMATION</span><h3>EcoShield Agent</h3><p>A security automation project exploring monitoring, security workflows and response concepts. Built as part of the EcoTechLabs project portfolio.</p><a class="project-link" href="https://github.com/eco4x/ECOSHIELD-AGENT" target="_blank" rel="noopener noreferrer">View repository ↗</a></article>
       <article class="project"><span class="tag">IDENTITY &amp; ACCESS MANAGEMENT</span><h3>IAM Policy Simulator</h3><p>An educational RBAC simulator for experimenting with users, roles, permissions, access decisions and basic audit events. A work in progress, not a production IAM platform.</p><a class="project-link" href="https://github.com/eco4x/iam-policy-simulator" target="_blank" rel="noopener noreferrer">View repository ↗</a></article>
-      <article class="project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A hands-on Entra ID homelab using a fictional seven-person company. Configured employee identities, department attributes, security groups and membership, then created an enterprise application and assigned a Finance user. The lab also documents the Entra ID Free limitation that prevented group-based application assignment in this tenant. This is a learning environment, not a production deployment.</p><div class="iam-gallery">
-<a class="iam-shot" href="images/iam-lab/01-employee-directory.svg" target="_blank" rel="noopener noreferrer"><img src="images/iam-lab/01-employee-directory.svg" alt="Illustrative employee directory visual showing seven fictional EcoTechLabs identities"><span>01 · Employee directory</span></a>
-<a class="iam-shot" href="images/iam-lab/02-security-groups.svg" target="_blank" rel="noopener noreferrer"><img src="images/iam-lab/02-security-groups.svg" alt="Illustrative security group structure and membership"><span>02 · Security groups &amp; membership</span></a>
-<a class="iam-shot" href="images/iam-lab/03-finance-application.svg" target="_blank" rel="noopener noreferrer"><img src="images/iam-lab/03-finance-application.svg" alt="EcoTechLabs Finance Portal enterprise application visual"><span>03 · Enterprise application</span></a>
-<a class="iam-shot" href="images/iam-lab/04-access-assignment.svg" target="_blank" rel="noopener noreferrer"><img src="images/iam-lab/04-access-assignment.svg" alt="David Brown individual application assignment and tenant plan limitation"><span>04 · Application assignment &amp; limitation</span></a>
-<a class="iam-shot" href="images/iam-lab/05-access-control-model.svg" target="_blank" rel="noopener noreferrer"><img src="images/iam-lab/05-access-control-model.svg" alt="Conceptual identity-to-application access flow"><span>05 · Identity-to-application flow</span></a>
+      <article class="project"><span class="tag">MICROSOFT ENTRA ID · IAM HOMELAB</span><h3>EcoTechLabs Identity &amp; Access Management Lab</h3><p>A hands-on Entra ID homelab using a fictional seven-person company. Configured employee identities, department attributes, security groups and membership, then created an enterprise application and assigned a Finance user. The lab also documents the Entra ID Free limitation that prevented group-based application assignment in this tenant. This is a learning environment, not a production deployment.</p><div class="iam-gallery" id="iam-evidence-gallery" aria-live="polite">
+<p class="iam-note">Loading the original Microsoft Entra screenshots from the evidence archive…</p>
 </div>
+<p class="iam-note">These are captured Microsoft Entra admin-center screenshots from the lab. The archive is stored in this repository; the gallery extracts and displays the original images in the browser.</p>
+<a class="project-link" href="images/iam-lab/ecotechlabs-iam-real-screenshots.zip" download>Download original screenshot evidence ↗</a>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script>
+(async function () {
+  const gallery = document.getElementById('iam-evidence-gallery');
+  const shots = [
+    ['01-finance-portal-assignment.jpg','01 · Finance Portal user assignment','David Brown appears in the assigned users list for EcoTechLabs Finance Portal.'],
+    ['02-employee-directory.jpg','02 · Employee directory','The Entra directory showing the eight user accounts created for the lab.'],
+    ['03-security-groups.jpg','03 · Security groups','The seven department-based security groups configured in the tenant.'],
+    ['04-tenant-overview.jpg','04 · Tenant overview','Tenant summary showing users, groups, enterprise applications and Entra Free.']
+  ];
+  try {
+    const response = await fetch('images/iam-lab/ecotechlabs-iam-real-screenshots.zip');
+    if (!response.ok) throw new Error('Evidence archive could not be loaded.');
+    const zip = await JSZip.loadAsync(await response.blob());
+    gallery.replaceChildren();
+    for (const [file,title,description] of shots) {
+      const entry = zip.file('images/iam-lab/evidence/' + file);
+      if (!entry) continue;
+      const blob = await entry.async('blob');
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.className = 'iam-shot';
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const image = document.createElement('img');
+      image.src = url;
+      image.alt = title + '. ' + description;
+      image.loading = 'lazy';
+      const caption = document.createElement('span');
+      caption.textContent = title + ' — ' + description;
+      link.append(image, caption);
+      gallery.append(link);
+    }
+    if (!gallery.children.length) throw new Error('No screenshot files were found in the archive.');
+  } catch (error) {
+    gallery.textContent = 'Screenshots could not be displayed automatically. Use the download link below to access the original evidence archive.';
+  }
+})();
+</script>
 <p class="iam-note">These are original explanatory visuals, not captured Microsoft Entra screenshots. Genuine portal screenshots will be added separately as implementation evidence.</p>
 <span class="project-link">Visual walkthrough · More lab evidence to follow</span></article>
       <article class="project"><span class="tag">PERSONAL PORTFOLIO</span><h3>Cybersecurity Learning Journal</h3><p>This portfolio is being developed into a record of practical labs, technical notes, project milestones and lessons learned.</p><a class="project-link" href="https://github.com/eco4x" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a></article>
