@@ -35,6 +35,24 @@
     @media(max-width:760px){.mentorship-panel{grid-template-columns:1fr;padding:24px}.mentorship-badge{max-width:240px}.navlinks{gap:13px;overflow-x:auto}.navlinks a{font-size:.78rem}.hero{grid-template-columns:1fr;padding:76px 0 62px;gap:34px;min-height:auto}.portrait{justify-self:start;max-width:230px}.about-grid,.cards{grid-template-columns:1fr}.section-head{display:block}.item{grid-template-columns:1fr;gap:5px}section{padding:60px 0}}
     @media(max-width:470px){.wrap{width:min(var(--max),calc(100% - 28px))}nav{align-items:flex-start;flex-direction:column;padding:14px 0}.navlinks{width:100%;padding-bottom:5px}.hero{padding-top:55px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+    /* Subtle cyber aesthetic: ambient light, restrained grid and responsive glow */
+    body{position:relative;isolation:isolate;background-color:#070e19;background-image:radial-gradient(ellipse at 12% 18%,rgba(0,224,190,.11),transparent 30%),radial-gradient(ellipse at 88% 28%,rgba(36,115,255,.10),transparent 34%),radial-gradient(ellipse at 50% 82%,rgba(0,190,160,.055),transparent 38%),linear-gradient(rgba(93,157,191,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(93,157,191,.035) 1px,transparent 1px);background-size:auto,auto,auto,42px 42px,42px 42px;background-attachment:fixed}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(115deg,transparent 0%,rgba(53,220,200,.025) 48%,transparent 72%);opacity:.8}
+    header{background:rgba(5,13,24,.82);box-shadow:0 8px 32px rgba(0,0,0,.18)}
+    .brand:before{content:"";display:inline-block;width:7px;height:7px;margin:0 9px 2px 0;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent),0 0 18px rgba(85,224,192,.65)}
+    .navlinks a{position:relative;transition:color .2s ease}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--accent);box-shadow:0 0 8px var(--accent);transition:right .22s ease}.navlinks a:hover:after,.navlinks a:focus-visible:after{right:0}
+    .hero{position:relative}.hero:before{content:"";position:absolute;right:3%;top:12%;width:310px;height:310px;border-radius:50%;border:1px solid rgba(85,224,192,.11);box-shadow:0 0 45px rgba(29,194,178,.075),inset 0 0 45px rgba(29,194,178,.045);pointer-events:none;z-index:-1}.hero:after{content:"";position:absolute;right:12%;top:24%;width:115px;height:115px;border-radius:50%;background:rgba(0,215,190,.08);filter:blur(48px);pointer-events:none;z-index:-1}
+    .eyebrow{text-shadow:0 0 14px rgba(85,224,192,.22)}h1{text-shadow:0 0 34px rgba(72,205,196,.10)}
+    .btn{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.btn:hover{border-color:rgba(85,224,192,.55);box-shadow:0 0 22px rgba(85,224,192,.12)}.btn.primary{box-shadow:0 0 20px rgba(85,224,192,.13)}.btn.primary:hover{box-shadow:0 0 28px rgba(85,224,192,.25)}
+    .portrait{box-shadow:0 0 0 1px rgba(85,224,192,.04),0 18px 55px rgba(0,0,0,.22),0 0 38px rgba(39,203,183,.10);transition:box-shadow .25s ease,transform .25s ease}.portrait:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.28),0 0 42px rgba(39,203,183,.17)}
+    .panel,.project{position:relative;overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}.panel:before,.project:before{content:"";position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,rgba(85,224,192,.36),transparent);opacity:.65}.panel:hover,.project:hover{transform:translateY(-3px);border-color:rgba(85,224,192,.28);box-shadow:0 14px 34px rgba(0,0,0,.18),0 0 24px rgba(30,196,176,.055)}
+    .tag{text-shadow:0 0 12px rgba(85,224,192,.20)}.skill{transition:border-color .2s ease,background .2s ease,box-shadow .2s ease}.skill:hover{border-color:rgba(85,224,192,.38);background:rgba(35,72,83,.48);box-shadow:0 0 16px rgba(85,224,192,.07)}
+    .contact{box-shadow:0 0 34px rgba(85,224,192,.045)}
+    @media(prefers-reduced-motion:no-preference){.hero:before{animation:ambient-pulse 8s ease-in-out infinite alternate}@keyframes ambient-pulse{from{opacity:.55;transform:scale(.98)}to{opacity:1;transform:scale(1.035)}}}
+    @media(max-width:760px){body{background-attachment:scroll}.hero:before{right:0;width:220px;height:220px}}
+    @media(prefers-reduced-motion:reduce){.hero:before{animation:none}.panel,.project,.portrait,.btn,.skill{transition:none}}
+
   </style>
 </head>
 <body>
